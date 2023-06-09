@@ -1,0 +1,31 @@
+---
+title: "Economic Connectedness"
+author: "Vaangmaya Rebba"
+format: html
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| message: false
+
+library(tidyverse)
+library(primer.data)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+connectedness |> 
+  ggplot(aes(x = population, y = connectedness, na.rm = TRUE))+
+  geom_point()+ 
+  scale_x_log10(labels = scales::comma)+ 
+  labs(
+    title = "Correlation between Population and Connectedness",
+    subtitle = "Population doesn't matter for EC",
+    x = "Population", y = "Connectedness"
+  )
+```
+
